@@ -3,16 +3,21 @@ import {
   SelectWrapper,
   StyledOption,
   StyledSelect,
-} from "./CommonStyles";
+} from "./styles";
 
-export function GameOrder() {
+export function GameOrder({ value, handleChange }) {
   return (
     <SelectWrapper className="mr-2">
-      <SelectLabel htmlFor="order">Order By:</SelectLabel>
-      <StyledSelect name="order" id="order">
-        <StyledOption value="relevance">Relevence</StyledOption>
-        <StyledOption value="created">Date added</StyledOption>
-        <StyledOption value="name">Name</StyledOption>
+      <SelectLabel>Order By:</SelectLabel>
+      <StyledSelect
+        name="order"
+        value={value || "-released"}
+        onChange={handleChange}
+      >
+        <StyledOption value="-released">-Released</StyledOption>
+        <StyledOption value="released">Released</StyledOption>
+        <StyledOption value="-rating">-Rating</StyledOption>
+        <StyledOption value="rating">Rating</StyledOption>
       </StyledSelect>
     </SelectWrapper>
   );

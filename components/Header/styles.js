@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
 export const Header = styled.header`
-  z-index: 10;
+  position: sticky;
+  top: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 60px;
+  background-color: #151515;
 `;
 
 export const HeaderBrand = styled.div`
@@ -21,11 +23,13 @@ export const HeaderBrandLink = styled.a`
 `;
 
 export const HeaderSearchFrom = styled.form`
+  flex: 1;
   padding: 0 12px 0 24px;
 `;
 
 export const HeaderSearchInput = styled.input`
   color: hsla(0, 0%, 100%, 0.6);
+  width: 100%;
   opacity: 1;
   padding: 0 12px 0 38px;
   height: 28px;

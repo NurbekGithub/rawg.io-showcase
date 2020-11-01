@@ -21,7 +21,8 @@ a {
 }
 
 input,
-select {
+select,
+button {
   outline: none;
 }
 
@@ -32,4 +33,8 @@ select {
 
 .d-flex {
   display: flex;
+}
+
+.c-img-full {
+  width: 100%;
 }
