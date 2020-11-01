@@ -15,6 +15,7 @@ export const GameCards = styled.div`
 `;
 
 export const GameCardWrapper = styled.div`
+  cursor: pointer;
   background-color: #202020;
   border-radius: 12px;
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.07);

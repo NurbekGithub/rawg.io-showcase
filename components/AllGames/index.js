@@ -68,44 +68,45 @@ export function AllGamesContainer() {
       </GameFilters>
       <GameCards>
         {data?.map((games) => {
-          return games.results.map((game) => {
-            return (
-              <GameCardWrapper key={game.id}>
-                <GameCardMedia>
-                  {game.background_image ? (
-                    <Image
-                      className="c-img-full"
-                      src={game.background_image}
-                      alt={game.name}
-                      unsized
-                    />
-                  ) : (
-                    <img
-                      src="https://www.freeiconspng.com/thumbs/no-image-icon/no-image-icon-6.png"
-                      width="100%"
-                      alt="no-image"
-                    />
-                  )}
-                </GameCardMedia>
-                <GameCardInfo>
-                  {game.platforms.map((p) => (
-                    <GamePlatformTag key={p.platform.id}>
-                      {p.platform.name}
-                    </GamePlatformTag>
-                  ))}
-                  <GameCardInfoHeading>{game.name}</GameCardInfoHeading>
-                  <GameCardInfoMeta>
-                    <span>Released: </span>
-                    {game.released}
-                  </GameCardInfoMeta>
-                  <GameCardInfoMeta>
-                    <span>Rating: </span>
-                    {game.rating}
-                  </GameCardInfoMeta>
-                </GameCardInfo>
-              </GameCardWrapper>
-            );
-          });
+          return games.results.map((game) => (
+            <GameCardWrapper
+              key={game.id}
+              onClick={() => router.push(`/game/${game.slug}`)}
+            >
+              <GameCardMedia>
+                {game.background_image ? (
+                  <Image
+                    className="c-img-full"
+                    src={game.background_image}
+                    alt={game.name}
+                    unsized
+                  />
+                ) : (
+                  <img
+                    src="https://www.freeiconspng.com/thumbs/no-image-icon/no-image-icon-6.png"
+                    width="100%"
+                    alt="no-image"
+                  />
+                )}
+              </GameCardMedia>
+              <GameCardInfo>
+                {game.platforms.map((p) => (
+                  <GamePlatformTag key={p.platform.id}>
+                    {p.platform.name}
+                  </GamePlatformTag>
+                ))}
+                <GameCardInfoHeading>{game.name}</GameCardInfoHeading>
+                <GameCardInfoMeta>
+                  <span>Released: </span>
+                  {game.released}
+                </GameCardInfoMeta>
+                <GameCardInfoMeta>
+                  <span>Rating: </span>
+                  {game.rating}
+                </GameCardInfoMeta>
+              </GameCardInfo>
+            </GameCardWrapper>
+          ));
         })}
       </GameCards>
       <LoadMoreButton
