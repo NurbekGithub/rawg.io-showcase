@@ -5,6 +5,7 @@ import * as S from "./styles";
 export function Slider({ screenshots }) {
   const [activeIdx, setActiveIdx] = useState(0);
   const currentImg = screenshots[activeIdx];
+  if (screenshots.length === 0) return null;
   return (
     <S.Slider>
       <S.SliderButtonsWrapper>
